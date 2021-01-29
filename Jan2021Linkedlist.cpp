@@ -5,7 +5,7 @@ struct Node{
 	Node *next;
 	
 }*head=NULL,*last=NULL;
-
+//.... create function completed...///
 void create()
 {
 	struct Node *second;
@@ -19,6 +19,8 @@ void create()
 	
 	
 }
+
+//...Count function completed...///
 int Count(struct Node *n)
 {
 	int count=0;
@@ -29,6 +31,7 @@ int Count(struct Node *n)
 	}
 	return count;
 }
+//...Display function completed...///
 void Display(struct Node *n)
 {
 	while(n!=NULL)
@@ -38,6 +41,7 @@ void Display(struct Node *n)
 	}
 	cout<<endl;
 }
+//... Insertfront completed....//
 void InsertFront()
 {
 	int d;
@@ -50,6 +54,7 @@ void InsertFront()
 	head=temp;
 	
 }
+//.. Insertkey completed ...///
 void InsertKey()
 {
 	struct Node *prevptr=NULL;
@@ -77,6 +82,7 @@ void InsertKey()
 		cout<<"Enter the value less the no of nodes: "<<endl;
 	}
 }
+//... Insert at last is working...///
 void InsertLast(struct Node *n)
 {
 	struct Node *temp=NULL;
@@ -92,6 +98,8 @@ void InsertLast(struct Node *n)
 	}
 	n->next=temp;
 }
+
+//...sorted function completed..//
 void SortList()
 {
 	int t;
@@ -101,28 +109,25 @@ void SortList()
 	int i,j;
 	for(i=0;i<Count(head);i++)
 	{
-		for(j=0;j<(Count(head)-i-1);i++)
+		for(j=0;j<Count(head)-i-1;j++)
 		{
 			if(current->data > later->data)
 			{
 				t=current->data;
 				current->data=later->data;
 				later->data=t;
-				
-				current=current->next;
-				later=later->next;
-				
 			}
-			else
-			{
-				current=current->next;
-				later=later->next;
-			}
+			current=later;
+			later=later->next;
 			
 		}
+		current=head;
+	    later=head->next;
+		
 	}
 	
 }
+//... Linear search function completed...///
 int LinearSearch(struct Node *temp)
 {
 	int element;
@@ -143,6 +148,8 @@ int LinearSearch(struct Node *temp)
 	return -1;
 	
 }
+
+//... Deletelist function completed...///
 int DeleteList(struct Node *p)
 {
 	int pos,x=-1;
@@ -178,7 +185,7 @@ int DeleteList(struct Node *p)
 	}
 	
 }
-
+///.... working ..///
 //second method for finding whether LInked lists is sorted or not//
 int checkSortedornot()
 {
@@ -201,6 +208,7 @@ int checkSortedornot()
 	return 1;
 	
 }
+//... It is working ..//
 int Testcase(struct Node *p)
 {
 	int i,x=INT_MIN;
@@ -221,6 +229,8 @@ int Testcase(struct Node *p)
 	return 1;
 	
 }
+
+//... Duplicate LIst is working...///
 int DuplicateList(struct Node *p)
 {
 	int x=-1;
@@ -247,11 +257,7 @@ int DuplicateList(struct Node *p)
 }
 int main()
 {
-//	create();
-//	Display(head);
-//	InsertFront();
-//	cout<<endl;
-//	Display(head);
+
 	int option;
 	do{
 		cout<<"1. Create Linked list: "<<endl;
